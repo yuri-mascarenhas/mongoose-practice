@@ -11,3 +11,13 @@ const DB = mongoose
     console.error("Connection error.");
     console.error(err);
   });
+
+// Schemas - Classes
+const animeSchema = new mongoose.Schema({
+  title: String,
+  start: Date,
+  seasons: Number,
+  episodes: Number,
+  rating: Number,
+});
+const Anime = mongoose.model("Anime", animeSchema);
