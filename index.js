@@ -15,9 +15,19 @@ const DB = mongoose
 // Schemas - Classes
 const animeSchema = new mongoose.Schema({
   title: String,
-  start: Date,
+  start: Number,
   seasons: Number,
   episodes: Number,
   rating: Number,
 });
 const Anime = mongoose.model("Anime", animeSchema);
+
+// Instances
+const shingekiNoKyojin = new Anime({
+  title: "Shingeki no kyojin",
+  start: 2013,
+  seasons: 4,
+  episodes: 100,
+  rating: 8.55,
+});
+shingekiNoKyojin.save();
